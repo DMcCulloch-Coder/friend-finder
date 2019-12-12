@@ -28,6 +28,12 @@
                 box-sizing: border-box;
                 font-family: 'Roboto', sans-serif;
                 font-size: 1.6rem;
+                margin: 3px;
+                padding: 1px;
+
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
                 
             }
 
@@ -36,6 +42,7 @@
             a:active {
                 text-decoration: none;
                 color: blueviolet;
+                margin: 1rem;
 
             }
 
@@ -49,7 +56,38 @@
             .container {
                 width: 90%;
                 margin: 0 auto;
+                flex-grow: 1;
 
+            }
+
+            .header {
+                text-align: center;
+                margin-bottom: 5rem;
+
+            }
+
+            .header h1 {
+                font-size: 8rem;
+            }
+            
+            .main {
+                text-align: center;
+                line-height: 3rem;
+            }
+
+            .main input {
+                width: 60%;
+                padding: .5rem;
+            }
+
+            #submit {
+                width: 8rem;
+                margin: 1.5rem;
+            }
+
+            .footer {
+                margin: 0 5rem;
+                padding: 5rem;
             }
         
         </style>
@@ -141,13 +179,13 @@
                 </form>
             </main>
 
-            <footer class="footer">
-
-                <p>Created by: David McCulloch</p>
-
-            </footer>
-
         </div>
+
+        <footer class="footer">
+
+            <p>Created by: David McCulloch</p>
+
+        </footer>
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="/assets/js/script.js"></script>
