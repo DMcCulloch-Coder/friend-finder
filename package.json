@@ -19,9 +19,7 @@
   },
   "homepage": "https://github.com/DMcCulloch-Coder/friend-finder#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "mysql": "^2.17.1",
-    "path": "^0.12.7"
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
