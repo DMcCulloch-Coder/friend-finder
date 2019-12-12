@@ -7,7 +7,7 @@
         
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/assets/css/style.css">
-        <title>Team Finder</title> 
+        <title>Friend Finder</title> 
 
         
         <style>
@@ -108,69 +108,64 @@
             </header>
 
             <main class="main">
-                <h2>Questions</h2>
+                <h2>Questions:</h2>
                 <form action="" class="survey-form">
                     <p>Name (Required):</p>
                     <div class="form-group">
                         <input id="name" type="text">
                         <label for="name"></label>
                     </div>
-                    <p>E-mail (Required):</p>
-                    <div class="form-group">
-                        <input id="email" type="email">
-                        <label for="email"></label>
-                    </div>
                     <p>Link to Photo Image:</p>
                     <div class="form-group">
                         <input id="photo" type="text">
                         <label for="photo"></label>
                     </div>
-                    <p>I really want to make a game!</p>
+                    <p>Your mind is always buzzing with unexplored ideas and plans.</p>
                     <div class="form-group">
                         <input id="question-1" type="text" placeholder="1 (strongly disagree) - 5 (strongly agree)">
                         <label for="question-1"></label>
                     </div>
-                    <p>I really want to work hard!</p>
+                    <p>Generally speaking, you rely more on your experience than your imagination.</p>
                     <div class="form-group">
                         <input id="question-2" type="text" placeholder="1 (strongly disagree) - 5 (strongly agree)">
                         <label for="question-2"></label>
                     </div>
-                    <p>I like really practical websites.</p>
+                    <p>You find it easy to stay relaxed and focused even when there is some pressure.</p>
                     <div class="form-group">
                         <input id="question-3" type="text" placeholder="1 (strongly disagree) - 5 (strongly agree)">
                         <label for="question-3"></label>
                     </div>
-                    <p>I want to get started with the project over Christmas.</p>
+                    <p>You rarely do something just out of sheer curiosity.</p>
                     <div class="form-group">
                         <input id="question-4" type="text" placeholder="1 (strongly disagree) - 5 (strongly agree)">
                         <label for="question-4"></label>
                     </div>
-                    <p>I want our website to be as simple as possible.</p>
+                    <p>People can rarely upset you.</p>
                     <div class="form-group">
                         <input id="question-5" type="text" placeholder="1 (strongly disagree) - 5 (strongly agree)">
                         <label for="question-5"></label>
                     </div>
-                    <p>I plan on communcating via slack with my group every day</p>
+                    <p>It is often difficult for you to relate to other people’s feelings.</p>
                     <div class="form-group">
                         <input id="question-6" type="text" placeholder="1 (strongly disagree) - 5 (strongly agree)">
                         <label for="question-6"></label>
                     </div>
-                    <p>I want the website to be really fun!</p>
+                    <p>In a discussion, truth should be more important than people’s sensitivities.</p>
                     <div class="form-group">
                         <input id="question-7" type="text" placeholder="1 (strongly disagree) - 5 (strongly agree)">
                         <label for="question-7"></label>
                     </div>
-                    <p>I love being creative.</p>
+                    <p>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</p>
                     <div class="form-group">
                         <input id="question-8" type="text" placeholder="1 (strongly disagree) - 5 (strongly agree)">
                         <label for="question-8"></label>
                     </div>
-                    <p>I want to focus on Front-End!</p>
+                    <p>You rarely get carried away by fantasies and ideas.</p>
                     <div class="form-group">
                         <input id="question-9" type="text" placeholder="1 (strongly disagree) - 5 (strongly agree)">
                         <label for="question-9"></label>
                     </div>
-                    <p>I want to be the Team Leader.</p>
+                    <p>You feel more energetic after spending time with a group of people.</p>
                     <div class="form-group">
                         <input id="question-10" type="text" placeholder="1 (strongly disagree) - 5 (strongly agree)">
                         <label for="question-10"></label>
@@ -188,7 +183,30 @@
         </footer>
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="/assets/js/script.js"></script>
+        
+        <script>
+        
+            $(document).ready(function() {
+
+                $('#submit').on('click', (event) => {
+                    event.preventDefault()
+                    console.log($('#name').val())
+                    console.log($('#photo').val())
+                    console.log($('#question-1').val())
+                    console.log($('#question-2').val())
+                    console.log($('#question-3').val())
+                    console.log($('#question-4').val())
+                    console.log($('#question-5').val())
+                    console.log($('#question-6').val())
+                    console.log($('#question-7').val())
+                    console.log($('#question-8').val())
+                    console.log($('#question-9').val())
+                    console.log($('#question-10').val())
+                    
+                })
+            })
+        
+        </script>
 
     </body>
 
