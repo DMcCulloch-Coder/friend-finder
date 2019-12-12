@@ -1,0 +1,29 @@
+{
+  "name": "friend-finder",
+  "version": "1.0.0",
+  "description": "App to find friends using express server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js -e js,html,css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DMcCulloch-Coder/friend-finder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DMcCulloch-Coder/friend-finder/issues"
+  },
+  "homepage": "https://github.com/DMcCulloch-Coder/friend-finder#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.17.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
