@@ -8,8 +8,7 @@ const port = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended : true }));
 app.use(express.json());
 app.use('/', htmlRoutes);
-// app.use('/', apiRoutes);
-
+app.use(apiRoutes);
 
 app.listen(port, () => {
     console.log(`Server is up on port ${port}`)
