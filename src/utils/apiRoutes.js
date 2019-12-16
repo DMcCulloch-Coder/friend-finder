@@ -9,10 +9,29 @@ router.get('/api', (req, res) => {
 
 router.post('/api', (req, res) => {
     const user = req.body
+    let replyIndex = 0;
+    let lowestDifference;
 
-    //evaluates friendships and sends back the closest match
+    for (let i = 0; i < friends.length; i++) {
+        let tempDiffenece = 0;
+        
+        for (let j = 0; j < 10; j++) {
+            tempDiffenece += Math.abs(user.scores[j] - friends[i].scores[j])
+        }
+
+        if (lowestDifference) {
+            if (tempDiffenece < lowestDifference) {
+                lowestDifference = tempDiffenece;
+                replyIndex = i;
+            }
+        } else {
+            lowestDifference = tempDiffenece;
+            replyIndex = i;
+        }
+    }
 
     friends.push(user)
+    res.send(friends[replyIndex])
 
 })
 
