@@ -88,6 +88,60 @@
                 margin: 0 5rem;
                 padding: 5rem;
             }
+
+            .popup {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                width: 100%;
+                background-color: rgba(0,0,0,.8);
+                z-index: 2;
+                opacity: 0;
+                visibility: hidden;
+                transition: all .3s;
+            }
+
+            .popup__close:link,
+            .popup__close:visited {
+                color: black;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                font-size: 3rem;
+                text-decoration: none;
+                display: inline-block;
+                line-height: 1;
+            }
+
+            .popup__close:hover {
+                color: red;
+            }
+
+            .popup__content {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                background-color: white;
+                width: 75%;
+                border-radius: 3px;
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(1);
+                transition: all .5s .2s;
+                height: 50vh;
+            }
+
+            .popup__content--name {
+                text-align: center;
+                font-size: 3rem;
+                padding: 2rem;
+            }
+
+            .popup__content--img {
+                height: 30rem;
+                margin: 0 auto;
+                display: block;
+            }
         
         </style>
 
@@ -181,6 +235,14 @@
 
         </footer>
 
+        <div class="popup" id="popup">
+            <div class="popup__content">
+                <div class="popup__content--name"></div>
+                <div class="popup__content--img"></div>
+                <a href="#" class="popup__close">&times;</a>
+            </div>
+        </div>
+
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         
         <script>
@@ -192,7 +254,7 @@
 
                     let user = {
                         "name": `${$('#name').val()}`,
-                        "img-link": `${$('#photo').val()}`,
+                        "imgLink": `${$('#photo').val()}`,
                         "scores": [
                             `${$('#question-1').val()}`,
                             `${$('#question-2').val()}`,
@@ -212,10 +274,20 @@
                         method: "POST",
                         data: user
                     }).then((res) => {
-                        // modal popup
+                        $('.popup').css('visibility', 'visible')
+                        $('.popup').css('opacity', '1')
+                        $('.popup__content').css('opacity', '1')
                         
+                        $('.popup__content--name').html(`<h1>${res.name}</h1>`);
+                        $('.popup__content--img').html(`<img src='${res.imgLink}' />`)
                         
                         console.log(res)
+                    })
+
+                    $('.popup__close').on('click', () => {
+                        $('.popup').css('visibility', 'hidden')
+                        $('.popup').css('opacity', '0')
+                        $('.popup__content').css('opacity', '0')
                     })
 
                 })

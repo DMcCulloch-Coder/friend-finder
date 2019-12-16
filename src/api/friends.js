@@ -1,8 +1,8 @@
 const friends = 
 [
     {
-        "name": "billy",
-        "img-link": "www.google.com",
+        "name": "Billy",
+        "imgLink": "https://www.pexels.com/photo/woman-sitting-on-ground-2868847/",
         "scores": [1,2,3,1,2,3,1,2,3,4]
     }
 ]
