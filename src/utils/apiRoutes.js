@@ -10,7 +10,7 @@ router.get('/api', (req, res) => {
 router.post('/api', (req, res) => {
     const user = req.body
     let replyIndex = 0;
-    let lowestDifference;
+    let lowestDifference = 60;
 
     for (let i = 0; i < friends.length; i++) {
         let tempDiffenece = 0;
@@ -19,15 +19,11 @@ router.post('/api', (req, res) => {
             tempDiffenece += Math.abs(user.scores[j] - friends[i].scores[j])
         }
 
-        if (lowestDifference) {
-            if (tempDiffenece < lowestDifference) {
-                lowestDifference = tempDiffenece;
-                replyIndex = i;
-            }
-        } else {
+        if (tempDiffenece < lowestDifference) {
             lowestDifference = tempDiffenece;
             replyIndex = i;
         }
+
     }
 
     friends.push(user)
